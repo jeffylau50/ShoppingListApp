@@ -3,7 +3,11 @@ import React, { Component } from 'react';
 class Todo extends Component {
     render(){
         return(
-            <h1>todo</h1>
+            <div>
+            <p>{this.props.todob}</p>
+            <button>Edit</button>
+            <button>X</button>
+            </div>
         )
     }
 }

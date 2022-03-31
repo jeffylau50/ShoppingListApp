@@ -1,9 +1,34 @@
 import React, { Component } from 'react';
+const { v4: uuidv4 } = require('uuid');
 
 class Form extends Component {
+    constructor(props){
+        super(props);
+        this.state={
+         todo: ''
+        };
+       this.handlechange = this.handlechange.bind(this);
+       this.handlesubmit = this.handlesubmit.bind(this);
+    }
+    handlesubmit(evt){
+        evt.preventDefault();
+        const addedId = {...this.state, id: uuidv4()}
+        this.props.addItem(addedId);
+    }
+    handlechange(evt){
+        this.setState({
+            [evt.target.name]: evt.target.value
+        })
+    }
     render(){
         return(
-        <h1>Form</h1>
+        <div>
+            <form onSubmit={this.handlesubmit}>
+            <label htmlFor='newTodo'>New Todo</label>
+            <input onChange={this.handlechange} id='newTodo' name='todo'></input>
+            <button>Submit</button>
+            </form>
+        </div>
         )
     }
 }
