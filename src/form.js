@@ -24,7 +24,7 @@ class Form extends Component {
         return(
         <div>
             <form onSubmit={this.handlesubmit}>
-            <label htmlFor='newTodo'>New Todo</label>
+            <label htmlFor='newTodo'>New Item</label>
             <input onChange={this.handlechange} id='newTodo' name='todo'></input>
             <button>Submit</button>
             </form>
