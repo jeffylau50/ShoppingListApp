@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './item.css'
+import './public.css'
 
 class Item extends Component {
     constructor(props){
@@ -43,8 +44,8 @@ class Item extends Component {
         let result;
         if(this.state.editing === true){
             result = (
-                <div>
-                    <form>
+                <div className='Todo'>
+                    <form >
                     <input onChange={this.handlechange} name='todo' defaultValue={this.props.todob}></input>
                     <button onClick={this.submitEdit}>Submit</button>
                     </form>
@@ -52,10 +53,14 @@ class Item extends Component {
             )
         }else {
             result = (
-                <div>
+                <div className='task'>
+                <span className='att'>
                 <p onClick={this.changeStyle} className={this.state.check?'check': 'uncheck'} >{this.props.todob}</p>
-                <button onClick={this.editButton}>Edit</button>
-                <button onClick={this.handleClick}>X</button>
+                <span className='ToolBox'>
+                <button className='btn btn-warning' onClick={this.editButton}>Edit</button>
+                <button className='btn btn-danger' onClick={this.handleClick}>X</button>
+                </span>
+                </span>
                 </div>
             )
         }

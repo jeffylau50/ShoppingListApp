@@ -1,8 +1,54 @@
-.check{
-    color: rgb(169, 169, 169);
-    text-decoration: line-through;
+.task{
+    position: relative;
+    transition: opacity 0.4s linear;
 }
 
-.uncheck{
-    color: black
+.att{
+    display: inline;
+
+}
+
+.ToolBox{
+display: inline;
+margin-left: 250px;
+}
+
+
+.Todo {
+    display: flex;
+    margin: 0 -3rem 4px;
+    padding: 1.1rem 3rem;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(255,255,255,0.1);
+}
+
+.check{
+    opacity: 0.6;
+}
+
+.check:before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: -0.5rem;
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    animation: strikeitem 0.5s ease-out 0s forwards;
+}
+
+@keyframes strikeitem {
+    to {
+        width: calc(100% + 1 rem);
+    }
+}
+
+.itemSingle{
+    display: inline
+}
+
+.acting {
+	text-align: end;
 }

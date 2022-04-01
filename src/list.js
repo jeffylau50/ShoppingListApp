@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from './form'
 import Item from './item'
+import './public.css'
 
 class List extends Component {
     constructor(props){
@@ -31,9 +32,11 @@ class List extends Component {
     }
     render(){
         return(
-            <div>
-                {this.state.todob.map(todo => <Item editItem={this.editItem} handleDelete={this.handleDelete} id={todo.id}  todob={todo.todo} />)}
-
+            <div id= 'todolist'>
+                <h1>🛒Shopping Cart<span>Add your shopping item below!</span> </h1>
+                <ul>
+                {this.state.todob.map(todo => <li> <Item editItem={this.editItem} handleDelete={this.handleDelete} id={todo.id}  todob={todo.todo} /> </li>)}
+                </ul>
                 <Form  addItem={this.addItem} />
             </div>
         )
