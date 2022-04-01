@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
+import './item.css'
 
 class Item extends Component {
     constructor(props){
         super(props);
         this.state = {
         editing: false, 
-        todo: ''
+        todo: '',
+        check: false
         };
         this.handleClick = this.handleClick.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
         this.editButton = this.editButton.bind(this);
         this.submitEdit = this.submitEdit.bind(this);
         this.handlechange = this.handlechange.bind(this);
+        this.changeStyle = this.changeStyle.bind(this);
     }
     submitEdit(evt){
         evt.preventDefault();
@@ -22,7 +25,7 @@ class Item extends Component {
         this.setState({editing: true})
     }
     handleEdit(id){
-        this.props.editItem(this.props.id, )
+        this.props.editItem(this.props.id)
       }
     handleClick(id){
         this.props.handleDelete(this.props.id)
@@ -32,6 +35,9 @@ class Item extends Component {
         this.setState({
             [evt.target.name]: evt.target.value
         })
+    }
+    changeStyle(){
+       this.setState({check: !this.state.check})
     }
     render(){
         let result;
@@ -47,7 +53,7 @@ class Item extends Component {
         }else {
             result = (
                 <div>
-                <p>{this.props.todob}</p>
+                <p onClick={this.changeStyle} className={this.state.check?'check': 'uncheck'} >{this.props.todob}</p>
                 <button onClick={this.editButton}>Edit</button>
                 <button onClick={this.handleClick}>X</button>
                 </div>
