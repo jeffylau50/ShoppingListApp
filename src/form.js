@@ -16,8 +16,7 @@ class Form extends Component {
         evt.preventDefault();
         const addedId = {...this.state, id: uuidv4()}
         this.props.addItem(addedId);
-        this.props.sum(this.state.price)
-        this.setState({todo: ''});
+        this.setState({todo: '', price: ''});
         
     }
     handlechange(evt){
@@ -30,9 +29,9 @@ class Form extends Component {
         <div>
             <form onSubmit={this.handlesubmit}>
             <label htmlFor='newTodo'>New Item</label>
-            <input className='mr-3 Iteminput' maxlength="40" onChange={this.handlechange} value={this.state.todo} id='newTodo' name='todo'></input>
+            <input className='mr-3 Iteminput' maxlength="40" value={this.state.todo} onChange={this.handlechange} id='newTodo' name='todo'></input>
             <label className='mt-2' htmlFor='price'>💰</label>
-            <input onChange={this.handlechange} className='Priceinput' name='price' id='price' type='number' step='0.01' placeholder='$'></input>
+            <input onChange={this.handlechange} className='Priceinput' value={this.state.price} name='price' id='price' type='number' step='0.01' placeholder='$'></input>
             <button>Submit</button>
             </form>
         </div>

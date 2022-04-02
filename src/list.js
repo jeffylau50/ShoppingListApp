@@ -10,7 +10,7 @@ class List extends Component {
     constructor(props){
         super(props);
         this.state= {
-        todob: [{todo: 'Front Bumper', id: '1', price: 234}], total: 0
+        todob: [{todo: 'Front Bumper', id: '1', price: 2}], total: 0
         };
         this.addItem = this.addItem.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
@@ -35,7 +35,15 @@ class List extends Component {
     addItem(item){
         this.setState(state => ({ todob: [... state.todob, item]}))
     }
+
     render(){
+        let totalBtax = 0;
+        for (let i=0; i<this.state.todob.length; i++){
+            totalBtax = totalBtax + parseFloat(this.state.todob[i].price)
+            
+        }
+        let tax = (totalBtax*0.1).toFixed(2)
+        let realto = (totalBtax*1.1).toFixed(2)
         
         return(
             <div id= 'todolist'>
@@ -44,7 +52,7 @@ class List extends Component {
                 {this.state.todob.map(todo => <li> <Item sum={this.totalfunction} editItem={this.editItem} handleDelete={this.handleDelete} id={todo.id} price={todo.price}  todob={todo.todo} /> </li>)}
                 </ul>
                 <Form addItem={this.addItem} />
-                <Total total={'$'} />
+                <Total totaltax={'$'+tax} total={'$'+ realto} />
             </div>
         )
     }
