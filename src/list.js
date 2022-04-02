@@ -10,7 +10,7 @@ class List extends Component {
     constructor(props){
         super(props);
         this.state= {
-        todob: [{todo: 'Front Bumper', id: '1', price: 2}], total: 0
+        todob: [{todo: '🥩 New York Steak', id: '1', price: 16.00}, {todo: '🍒 Red Cherry', id: '2', price: 6.50}], total: 0
         };
         this.addItem = this.addItem.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
@@ -48,7 +48,7 @@ class List extends Component {
         return(
             <div id= 'todolist'>
                 <h1>🛒Shopping Cart<span>Add your shopping item below!</span> </h1>
-                <ul>
+                <ul className='mt-3'>
                 {this.state.todob.map(todo => <li> <Item sum={this.totalfunction} editItem={this.editItem} handleDelete={this.handleDelete} id={todo.id} price={todo.price}  todob={todo.todo} /> </li>)}
                 </ul>
                 <Form addItem={this.addItem} />

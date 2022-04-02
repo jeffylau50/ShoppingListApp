@@ -9,9 +9,9 @@ class Total extends Component {
     }
     render(){
         return(
-            <div>
+            <div className='mb-0'>
                 <h5 className='mt-4'>Sales Tax (10%): {this.props.totaltax}</h5>
-                <h4 className='mt-3'>Total: {this.props.total}</h4>
+                <h5 className='mt-3'>Total: {this.props.total}</h5>
             </div>
         )
     }

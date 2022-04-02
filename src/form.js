@@ -26,10 +26,10 @@ class Form extends Component {
     }
     render(){
         return(
-        <div>
-            <form onSubmit={this.handlesubmit}>
+        <div class='mt-0'>
+            <form className='mt-0' onSubmit={this.handlesubmit}>
             <label htmlFor='newTodo'>New Item</label>
-            <input className='mr-3 Iteminput' maxlength="40" value={this.state.todo} onChange={this.handlechange} id='newTodo' name='todo'></input>
+            <input className='mr-3 Iteminput' maxlength="40" value={this.state.todo} placeholder='Enter Item' onChange={this.handlechange} id='newTodo' name='todo'></input>
             <label className='mt-2' htmlFor='price'>💰</label>
             <input onChange={this.handlechange} className='Priceinput' value={this.state.price} name='price' id='price' type='number' step='0.01' placeholder='$'></input>
             <button>Submit</button>

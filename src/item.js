@@ -55,13 +55,13 @@ class Item extends Component {
             )
         }else {
             result = (
-                <div className='task'>
-                <span className='att'>
+                <div className='task mt-0'>
+                <span className='att mt-0'>
                 <p onClick={this.changeStyle} className={this.state.check?'check': 'uncheck'} >{this.props.todob}</p>
                 <p className='mt-0'>$ {this.props.price}</p>
                 <span className='ToolBox mt-0'>
-                <button className='btn btn-warning' onClick={this.editButton}>Edit</button>
-                <button className='btn btn-danger' onClick={this.handleClick}>X</button>
+                <button className='btn btn-warning mt-0' onClick={this.editButton}>Edit</button>
+                <button className='btn btn-danger mt-0' onClick={this.handleClick}>X</button>
                 </span>
                 </span>
                 </div>
