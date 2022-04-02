@@ -3,6 +3,11 @@
     transition: opacity 0.4s linear;
 }
 
+.forminput22{
+    margin-right:5px;
+    width: 250px;
+}
+
 .att{
     display: inline;
 
