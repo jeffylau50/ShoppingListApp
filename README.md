@@ -1,6 +1,6 @@
 # Shopping List App | Web App Component
 
-This App (CRUD) was built with React.js
+This App was built with React.js
 
 
 Deployed on Heroku: [https://shoppinglistreact.herokuapp.com/]
